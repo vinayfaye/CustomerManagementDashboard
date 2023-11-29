@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CustomerDashboardRoutingModule } from './customer-dashboard-routing.module';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
   ],
   imports: [
     CommonModule,
-    CustomerDashboardRoutingModule
+    CustomerDashboardRoutingModule, MatTableModule
+
   ]
 })
 export class CustomerDashboardModule { }
