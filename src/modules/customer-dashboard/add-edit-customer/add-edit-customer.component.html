@@ -1,0 +1,33 @@
+<mat-dialog-content>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" required />
+            <mat-error *ngIf="formGroup.get('firstName')?.hasError('required')">First Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" required />
+            <mat-error *ngIf="formGroup.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" type="email" required />
+            <mat-error *ngIf="formGroup.get('email')?.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="formGroup.get('email')?.hasError('email')">Invalid email address</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Number</mat-label>
+            <input matInput formControlName="number" type="number" required />
+            <mat-error *ngIf="formGroup.get('number')?.hasError('required')">Number is required</mat-error>
+        </mat-form-field>
+
+        <div>
+            <button mat-raised-button color="accent" type="submit" [disabled]="formGroup.invalid">Submit</button>
+            <button mat-button color="accent" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</mat-dialog-content>
